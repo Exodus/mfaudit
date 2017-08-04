@@ -19,7 +19,7 @@ iam = boto3.resource("iam")
 users = [user for user in iam.users.all()]
 console_users = []
 for idx,user in enumerate(users):
-    print("Profile {0} of {1} \r".format(idx, len(users)),end='')
+    print("Profile {0} of {1} \r".format(idx+1, len(users)),end='')
     profile = user.LoginProfile()
     try:
         profile.load()
